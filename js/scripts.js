@@ -1,12 +1,14 @@
-var triangleTracker = function(side1, side2, side3) {
-  var sideOne = parseFloat(side1);
-  var sideTwo = parseFloat(side2);
-  var sideThree = parseFloat(side3);
+
+//Branching
+  var triangleTracker = function(side1, side2, side3) {
+  var sideOne = parseInt(side1);
+  var sideTwo = parseInt(side2);
+  var sideThree = parseInt(side3);
 
   var newTriangle = { side1: sideOne,side2: sideTwo,side3: sideThree,type: ""
   };
 
-//Use of If else, else if
+//Use of If ...else, else if
   if( isNaN(sideOne) || isNaN(sideTwo) || isNaN(sideThree)){
     return "ERROR: PLEASE ENTER NUMBER FOR ALL THREE SIDES!";
   }
@@ -43,11 +45,11 @@ $(document).ready(function() {
     if(typeof(triangle)=="string"){
       alert(triangle);
     }else if(triangle.type=="Equilateral") {
-      $("p#equilateral").append("<b>" + triangle.side1 + " "+ triangle.side2 + " " + triangle.side3 +  "</b>");
+      $("p#equilateral").append("<b>" + triangle.side1 + " "+ triangle.side2 + " " + triangle.side3 +  "</br>");
     }else if(triangle.type=="Isosceles"){
-      $("p#isosceles").append("<b>" + triangle.side1 + " "+ triangle.side2 + " " + triangle.side3 + "</b>");
+      $("p#isosceles").append("<b>" + triangle.side1 + " "+ triangle.side2 + " " + triangle.side3 + "</br>");
     }else {
-      $("p#scalene").append("<b>"+ triangle.side1 + " " +triangle.side2+ " " + triangle.side3  + "</b>");
+      $("p#scalene").append("<b>"+ triangle.side1 + " " +triangle.side2+ " " + triangle.side3  + "</br>");
     }
 
   });
